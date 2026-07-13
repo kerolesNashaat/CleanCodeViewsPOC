@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="character"
+            type="com.kiro.poc.domain.model.Character" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="8dp"
+        android:layout_marginVertical="4dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/characterIV"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="@{character.name}"
+                app:imageUrl="@{character.image}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/characterNameTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:text="@{character.name}"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/characterIV"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Rick Sanchez" />
+
+            <View
+                android:id="@+id/statusIndicator"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                app:statusColor="@{character.status}"
+                app:layout_constraintBottom_toBottomOf="@id/characterStatusTv"
+                app:layout_constraintStart_toStartOf="@id/characterNameTv"
+                app:layout_constraintTop_toTopOf="@id/characterStatusTv" />
+
+            <TextView
+                android:id="@+id/characterStatusTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:text="@{character.status + ` - ` + character.species}"
+                android:textAppearance="?attr/textAppearanceBody2"
+                app:layout_constraintEnd_toEndOf="@id/characterNameTv"
+                app:layout_constraintStart_toEndOf="@id/statusIndicator"
+                app:layout_constraintTop_toBottomOf="@id/characterNameTv"
+                tools:text="Alive - Human" />
+
+            <TextView
+                android:id="@+id/lastLocationLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/last_known_location"
+                android:textAppearance="?attr/textAppearanceCaption"
+                android:textColor="?android:attr/textColorSecondary"
+                app:layout_constraintEnd_toEndOf="@id/characterNameTv"
+                app:layout_constraintStart_toStartOf="@id/characterNameTv"
+                app:layout_constraintTop_toBottomOf="@id/characterStatusTv"
+                tools:text="Last known location:" />
+
+            <TextView
+                android:id="@+id/characterLocationTv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="@{character.location}"
+                android:textAppearance="?attr/textAppearanceBody2"
+                app:layout_constraintEnd_toEndOf="@id/characterNameTv"
+                app:layout_constraintStart_toStartOf="@id/characterNameTv"
+                app:layout_constraintTop_toBottomOf="@id/lastLocationLabel"
+                tools:text="Earth (C-137)" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

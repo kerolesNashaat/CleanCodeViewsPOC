@@ -60,6 +60,11 @@ class CharactersFragment : Fragment() {
         binding.charactersRecyclerView.adapter = charactersAdapter
         binding.charactersRecyclerView.layoutManager = LinearLayoutManager(requireContext())
 
+        binding.groupedViewFab.setOnClickListener {
+            val action = CharactersFragmentDirections.actionCharactersFragmentToCharacterGroupsFragment()
+            findNavController().navigate(action)
+        }
+
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.characters.collectLatest {
                 charactersAdapter.submitData(it)

@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_charactersFragment_to_characterDetailsFragment"
             app:destination="@id/characterDetailsFragment" />
+        <action
+            android:id="@+id/action_charactersFragment_to_characterGroupsFragment"
+            app:destination="@id/characterGroupsFragment" />
     </fragment>
     <fragment
         android:id="@+id/characterDetailsFragment"
@@ -23,5 +26,14 @@
             android:name="characterId"
             app:argType="integer"
             android:defaultValue="-1" />
+    </fragment>
+    <fragment
+        android:id="@+id/characterGroupsFragment"
+        android:name="com.kiro.poc.presentation.characterGroups.CharacterGroupsFragment"
+        android:label="fragment_character_groups"
+        tools:layout="@layout/fragment_character_groups" >
+        <action
+            android:id="@+id/action_characterGroupsFragment_to_characterDetailsFragment"
+            app:destination="@id/characterDetailsFragment" />
     </fragment>
 </navigation>

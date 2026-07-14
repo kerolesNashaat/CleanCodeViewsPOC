@@ -35,4 +35,12 @@ class CharacterRepositoryImpl @Inject constructor(
             is Resource.Error -> emit(result)
         }
     }
+
+    override fun getCharacterList(page: Int): Flow<Resource<List<Character>>> = flow {
+        val result = safeApiCall { apiService.getCharacters(page) }
+        when (result) {
+            is Resource.Success -> emit(Resource.Success(result.data.results.orEmpty().toDomain()))
+            is Resource.Error -> emit(result)
+        }
+    }
 }

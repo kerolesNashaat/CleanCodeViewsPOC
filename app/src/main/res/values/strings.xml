@@ -5,4 +5,6 @@
     <string name="error_unknown">An unexpected error occurred.</string>
     <string name="error_network">Network error (%1$d): %2$s</string>
     <string name="last_known_location">Last known location:</string>
+    <string name="view_grouped_by_status">View characters grouped by status</string>
+    <string name="view_as_rows">View characters as horizontal rows</string>
 </resources>

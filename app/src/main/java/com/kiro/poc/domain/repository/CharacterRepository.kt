@@ -8,4 +8,5 @@ import kotlinx.coroutines.flow.Flow
 interface CharacterRepository {
     fun getCharacters(): Flow<PagingData<Character>>
     fun getCharacterById(id: Int): Flow<Resource<Character>>
+    fun getCharacterList(page: Int): Flow<Resource<List<Character>>>
 }

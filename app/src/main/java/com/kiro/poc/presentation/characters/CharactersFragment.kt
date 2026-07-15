@@ -65,6 +65,11 @@ class CharactersFragment : Fragment() {
             findNavController().navigate(action)
         }
 
+        binding.rowsViewFab.setOnClickListener {
+            val action = CharactersFragmentDirections.actionCharactersFragmentToCharacterRowsFragment()
+            findNavController().navigate(action)
+        }
+
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.characters.collectLatest {
                 charactersAdapter.submitData(it)

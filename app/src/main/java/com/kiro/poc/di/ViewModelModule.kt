@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.kiro.poc.presentation.characterDetails.CharacterDetailsViewModel
 import com.kiro.poc.presentation.characterGroups.CharacterGroupsViewModel
+import com.kiro.poc.presentation.characterRows.CharacterRowsViewModel
 import com.kiro.poc.presentation.characters.CharactersViewModel
 import dagger.Binds
 import dagger.MapKey
@@ -53,4 +54,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(CharacterGroupsViewModel::class)
     abstract fun bindCharacterGroupsViewModel(viewModel: CharacterGroupsViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(CharacterRowsViewModel::class)
+    abstract fun bindCharacterRowsViewModel(viewModel: CharacterRowsViewModel): ViewModel
 }

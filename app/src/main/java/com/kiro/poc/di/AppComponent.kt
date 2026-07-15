@@ -4,6 +4,7 @@ import android.content.Context
 import com.kiro.poc.presentation.MainActivity
 import com.kiro.poc.presentation.characterDetails.CharacterDetailsFragment
 import com.kiro.poc.presentation.characterGroups.CharacterGroupsFragment
+import com.kiro.poc.presentation.characterRows.CharacterRowsFragment
 import com.kiro.poc.presentation.characters.CharactersFragment
 import dagger.BindsInstance
 import dagger.Component
@@ -16,6 +17,7 @@ interface AppComponent {
     fun inject(fragment: CharactersFragment)
     fun inject(fragment: CharacterDetailsFragment)
     fun inject(fragment: CharacterGroupsFragment)
+    fun inject(fragment: CharacterRowsFragment)
 
     @Component.Builder
     interface Builder {

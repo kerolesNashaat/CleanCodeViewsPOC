@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="character"
+            type="com.kiro.poc.domain.model.Character" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="12dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="2dp"
+        app:strokeWidth="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:scaleType="centerCrop"
+                android:contentDescription="@{character.name}"
+                app:imageUrl="@{character.image}"
+                tools:src="@tools:sample/avatars" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="@{character.name}"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textStyle="bold"
+                tools:text="Rick Sanchez" />
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

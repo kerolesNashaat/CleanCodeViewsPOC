@@ -38,6 +38,11 @@ android {
     dataBinding {
         enable = true
     }
+    testOptions {
+        unitTests {
+            isIncludeAndroidResources = true
+        }
+    }
     sourceSets {
         getByName("debug") {
             java.srcDir("build/generated/ksp/debug/java")
@@ -96,10 +101,14 @@ dependencies {
     testImplementation(libs.mockito.kotlin)
     testImplementation(libs.coroutines.test)
     testImplementation(libs.robolectric)
+    testImplementation(libs.androidx.junit)
+    debugImplementation(libs.androidx.fragment.testing)
 
     // Instrumented tests
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.espresso.contrib)
     androidTestImplementation(libs.androidx.espresso.intents)
+    androidTestImplementation(libs.kaspresso)
+    androidTestImplementation(libs.kakao)
 }

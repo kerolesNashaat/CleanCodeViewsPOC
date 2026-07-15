@@ -27,6 +27,8 @@ legacySupportV4 = "1.0.0"
 fragmentKtx = "1.8.9"
 coil = "2.7.0"
 paging = "3.3.6"
+kaspresso = "1.6.1"
+kakao = "3.7.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -65,9 +67,12 @@ androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navi
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 androidx-legacy-support-v4 = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "legacySupportV4" }
 androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "fragmentKtx" }
+androidx-fragment-testing = { group = "androidx.fragment", name = "fragment-testing", version.ref = "fragment" }
 coil = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
 androidx-paging-runtime = { group = "androidx.paging", name = "paging-runtime", version.ref = "paging" }
 androidx-paging-common = { group = "androidx.paging", name = "paging-common", version.ref = "paging" }
+kaspresso = { group = "com.kaspersky.android-components", name = "kaspresso", version.ref = "kaspresso" }
+kakao = { group = "io.github.kakaocup", name = "kakao", version.ref = "kakao" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
